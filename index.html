@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Viral Ghori — Flutter Developer & Mobile Application Engineer in Auckland, New Zealand. 6+ years building cross-platform apps used by millions. Available for work." />
+  <meta name="author" content="Viral Ghori" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#07080f" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Viral Ghori — Flutter Developer" />
+  <meta property="og:description" content="Flutter Developer & Mobile Application Engineer in Auckland building cross-platform apps used by millions." />
+  <meta property="og:image" content="assets/og-image.png" />
+
+  <title>Viral Ghori — Flutter Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <!-- Reading-progress indicator -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ Header / Nav ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Home">
+        <span class="brand-mark">VG</span>
+        <span class="brand-text">Viral Ghori</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch colour theme" title="Switch theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+          <circle cx="12" cy="12" r="4" fill="currentColor" />
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="2" x2="12" y2="5" />
+            <line x1="12" y1="19" x2="12" y2="22" />
+            <line x1="2" y1="12" x2="5" y2="12" />
+            <line x1="19" y1="12" x2="22" y2="12" />
+            <line x1="4.9" y1="4.9" x2="7" y2="7" />
+            <line x1="17" y1="17" x2="19.1" y2="19.1" />
+            <line x1="4.9" y1="19.1" x2="7" y2="17" />
+            <line x1="17" y1="7" x2="19.1" y2="4.9" />
+          </g>
+        </svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- ============ Hero ============ -->
+    <section class="hero section" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">
+          <span class="status-dot" aria-hidden="true"></span>
+          Available for work · Auckland, New Zealand
+        </p>
+        <h1 class="hero-title" id="hero-heading">
+          Hi, I'm <span class="gradient-text">Viral Ghori</span>.<br />
+          I build cross-platform apps with Flutter.
+        </h1>
+        <p class="hero-subtitle">
+          Flutter developer with 6+ years of experience building iOS, Android, and web apps. 
+          Worked on real products across fintech, wellness, e-commerce, and IoT. 
+          Recently graduated with a Master of IT in Auckland, with a focus on AI and Data Mining.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View my work</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+
+        <ul class="hero-socials" aria-label="Social links">
+          <li><a href="https://github.com/lathiya18197" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/viral-lathiya-" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="assets/Viral_Ghori_CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ About ============ -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-index">01</span>
+          <h2 class="section-title" id="about-heading">About</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Flutter developer by trade, data and AI enthusiast by choice - now combining mobile expertise with hands-on AI and data skills. 
+            </p>
+            <p>
+              I've worked on real products across fintech, wellness, e-commerce, and IoT. 
+              Recently moved to Auckland and completed a Master of IT focused on AI and Data Mining - adding practical Python and data analysis skills to my toolkit.
+            </p>
+            <p>
+              Currently freelancing, upgrading my skills, and building new things — including an AI agent project. 
+              Always learning and looking to grow further in Auckland's tech industry
+            </p>
+
+            <dl class="about-facts">
+              <div><dt>Location</dt><dd>Auckland, NZ</dd></div>
+              <div><dt>Experience</dt><dd>6+ years</dd></div>
+              <div><dt>Focus</dt><dd>Flutter / Mobile / AI / Data Analyst / Full Stack</dd></div>
+              <div><dt>Status</dt><dd>Freelance · Open</dd></div>
+              <div><dt>Visa</dt><dd>NZ Work Visa</dd></div>
+              <div><dt>Education</dt><dd>Master of IT</dd></div>
+            </dl>
+          </div>
+
+          <aside class="about-card">
+            <h3 class="about-card-title">What I bring</h3>
+            <ul class="check-list">
+              <li>6+ years of production Flutter across iOS, Android &amp; web</li>
+              <li>Apps shipped to millions of real users</li>
+              <li>End-to-end ownership, from architecture to store release</li>
+              <li>Team leadership, code review &amp; mentoring</li>
+              <li>Master of IT — AI &amp; Data Mining (Auckland)</li>
+              <li>Valid NZ work visa &amp; locally based</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Skills ============ -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-index">02</span>
+          <h2 class="section-title" id="skills-heading">Skills</h2>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3 class="skill-card-title">Mobile &amp; Frontend</h3>
+            <ul class="tag-list">
+              <li>Flutter</li>
+              <li>Dart</li>
+              <li>Riverpod</li>
+              <li>Bloc / GetX</li>
+              <li>Provider</li>
+              <li>Swift / SwiftUI</li>
+              <li>React Native</li>
+              <li>Kotlin</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card-title">APIs, Backend &amp; Data</h3>
+            <ul class="tag-list">
+              <li>REST</li>
+              <li>GraphQL</li>
+              <li>Firebase</li>
+              <li>Razorpay</li>
+              <li>Spotify SDK</li>
+              <li>SQFlite / Realm</li>
+              <li>IoT Sockets</li>
+              <li>Custom Plugins</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card-title">Data &amp; AI</h3>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>Pandas / NumPy</li>
+              <li>Matplotlib</li>
+              <li>Machine Learning</li>
+              <li>Data Mining</li>
+              <li>LLMs &amp; Prompting</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card-title">Tools &amp; DevOps</h3>
+            <ul class="tag-list">
+              <li>Git / GitHub</li>
+              <li>Bitbucket</li>
+              <li>Fastlane CI/CD</li>
+              <li>Jira</li>
+              <li>Figma</li>
+              <li>Testing</li>
+              <li>Agile / Scrum</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Projects ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-index">03</span>
+          <h2 class="section-title" id="projects-heading">Selected projects</h2>
+        </header>
+
+        <p class="section-lead">
+          A selection of apps I've designed and shipped end to end — across fintech,
+          wellness, e-commerce, IoT, and AI. Several are live on the App Store and
+          Google Play today.
+        </p>
+
+        <div class="projects-grid">
+          <!-- ===== BillionBright Solutions (Rupeecom) ===== -->
+          <!-- ===== BillionBright Solutions (Rupeecom) ===== -->
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-head-text">
+                <span class="project-kicker">Flutter · Contract (India)</span>
+                <h3 class="project-title">Rupeecom — E-Commerce Platform</h3>
+              </div>
+              <span class="project-icon" aria-hidden="true">🛍️</span>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--problem">Problem</span>
+              <p>
+                Hundreds of small Indian businesses needed their own branded iOS and
+                Android apps — but building from scratch for each client was too slow
+                and expensive. Businesses also wanted to surface their social content
+                directly inside their app to keep customers engaged.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--solution">Solution</span>
+              <p>
+                As a contract Flutter developer, I built and maintained a white-label
+                app system where each client gets their own branded app from a single
+                shared codebase. I also integrated the Instagram Graph API to fetch
+                and display each business's own Instagram Reels directly inside their
+                app — keeping their social content and shopping experience in one place.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label">Key features</span>
+              <ul class="feature-list">
+                <li>White-label branded apps for multiple clients</li>
+                <li>Instagram Graph API — business Reels displayed in-app</li>
+                <li>Order management &amp; live delivery tracking</li>
+                <li>PhonePe payment gateway integration</li>
+                <li>Shopify product sync &amp; push notifications</li>
+                <li>Fastlane CI/CD for automated multi-client releases</li>
+              </ul>
+            </div>
+
+            <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+              <li>Flutter</li><li>Dart</li><li>Firebase</li><li>REST</li>
+              <li>Instagram Graph API</li><li>PhonePe</li><li>Shopify</li><li>Fastlane</li>
+            </ul>
+
+            <div class="project-actions">
+              <a class="btn btn-sm btn-primary" href="https://rupeecom.in" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> Visit Website
+              </a>
+            </div>
+          </article>
+
+          <!-- ===== Insight Timer ===== -->
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-head-text">
+                <span class="project-kicker">Flutter · Remote (Australia)</span>
+                <h3 class="project-title">Insight Timer</h3>
+              </div>
+              <span class="project-icon" aria-hidden="true">🧘</span>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--problem">Problem</span>
+              <p>
+                The world's #1 free meditation app (10&nbsp;million+ downloads) needed
+                new community and live features delivered without regressing
+                performance for a huge, global user base.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--solution">Solution</span>
+              <p>
+                As a Flutter engineer on a remote agile team, I built live teacher
+                hosting, group and one-to-one chat, milestone tracking, and audio
+                playback — and tuned slow paths to keep the app fast at scale.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label">Key features</span>
+              <ul class="feature-list">
+                <li>Live meditation events &amp; teacher hosting</li>
+                <li>Group and one-to-one chat</li>
+                <li>Daily check-in &amp; milestone tracking</li>
+                <li>Firebase Realtime Database &amp; social login</li>
+              </ul>
+            </div>
+
+            <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+              <li>Flutter</li><li>Dart</li><li>Firebase</li><li>REST</li>
+            </ul>
+
+            <div class="project-actions">
+              <a class="btn btn-sm btn-primary" href="https://apps.apple.com/us/app/insight-timer-meditate-sleep/id337472899" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> App Store
+              </a>
+              <a class="btn btn-sm btn-ghost" href="https://play.google.com/store/apps/details?id=com.spotlightsix.zentimerlite2" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> Google Play
+              </a>
+            </div>
+          </article>
+
+          <!-- ===== Sav ===== -->
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-head-text">
+                <span class="project-kicker">Flutter · Fintech · Dubai</span>
+                <h3 class="project-title">Sav — Savings &amp; Rewards</h3>
+              </div>
+              <span class="project-icon" aria-hidden="true">💰</span>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--problem">Problem</span>
+              <p>
+                A fintech startup needed a secure savings-and-rewards app built from
+                scratch and launched on iOS and Android, handling real financial
+                transactions for thousands of users.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--solution">Solution</span>
+              <p>
+                I led the entire front end from the very first line of code to launch —
+                integrating a secure payment gateway and KYC, managing the front-end
+                team and sprints, and cutting average load time by ~35%.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label">Key features</span>
+              <ul class="feature-list">
+                <li>Savings goals &amp; spending history</li>
+                <li>Secure payments &amp; KYC verification</li>
+                <li>Rewards &amp; festival bonus updates</li>
+                <li>Google / Facebook social sign-in</li>
+              </ul>
+            </div>
+
+            <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+              <li>Flutter</li><li>Dart</li><li>Payments</li><li>Adjust SDK</li><li>Analytics</li>
+            </ul>
+
+            <!-- <div class="project-actions">
+              <span class="project-tag-live"><span class="status-dot" aria-hidden="true"></span> Live · iOS &amp; Android</span>
+            </div> -->
+            <div class="project-actions">
+              <a class="btn btn-sm btn-primary" href="https://apps.apple.com/nz/app/sav-all-in-one-money-app/id1644649568" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> App Store
+              </a>
+              <a class="btn btn-sm btn-ghost" href="https://play.google.com/store/apps/details?id=com.sav.money.sav_money" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> Google Play
+              </a>
+            </div>
+          </article>
+
+          <!-- ===== Flutter Web Demo ===== -->
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-head-text">
+                <span class="project-kicker">Flutter Web · Demo</span>
+                <h3 class="project-title">Flutter Web Application</h3>
+              </div>
+              <span class="project-icon" aria-hidden="true">🌐</span>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--problem">Problem</span>
+              <p>
+                Demonstrating that Flutter can deliver a smooth, responsive web
+                experience — not just mobile — using the same codebase and
+                development workflow.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--solution">Solution</span>
+              <p>
+                Built a Flutter web application to showcase cross-platform capability
+                — the same Dart code running beautifully in a browser with responsive
+                layouts, smooth navigation, and a polished UI.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label">Key features</span>
+              <ul class="feature-list">
+                <li>Fully responsive layout for desktop and mobile browsers</li>
+                <li>Smooth navigation and animations</li>
+                <li>Built with the same Flutter and Dart codebase</li>
+                <li>Demonstrates cross-platform capability beyond mobile</li>
+              </ul>
+            </div>
+
+            <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+              <li>Flutter</li><li>Dart</li><li>Flutter Web</li>
+            </ul>
+
+            <div class="project-actions">
+              <a class="btn btn-sm btn-primary" href="https://drive.google.com/file/d/18dVgfELPFu-iNlWfBfb1vgxrCHuVIAS-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> Watch Demo
+              </a>
+            </div>
+          </article>
+
+          <!-- ===== AI Resume Analyser ===== -->
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-head-text">
+                <span class="project-kicker">React Native · AI</span>
+                <h3 class="project-title">AI Resume Analyser</h3>
+              </div>
+              <span class="project-icon" aria-hidden="true">🧠</span>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--problem">Problem</span>
+              <p>
+                Job seekers struggle to tailor a CV to a role and rarely get objective
+                feedback before they apply.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--solution">Solution</span>
+              <p>
+                A personal React Native app that analyses a CV and suggests concrete
+                improvements — built to apply the AI and prompt-engineering skills from
+                my Master of IT to a genuinely useful workflow.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label">Key features</span>
+              <ul class="feature-list">
+                <li>CV parsing &amp; analysis</li>
+                <li>AI-driven improvement suggestions</li>
+                <li>Cross-platform mobile UI</li>
+              </ul>
+            </div>
+
+            <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+              <li>React Native</li><li>AI / LLM</li><li>Prompt Engineering</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn btn-sm btn-primary" href="https://github.com/lathiya18197" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">★</span> GitHub
+              </a>
+              <a class="btn btn-sm btn-ghost" href="https://drive.google.com/file/d/1Ap46LDgDiGeZ6Ax3uMV1J0lkAAM73TsT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">▶</span> Watch Demo
+              </a>
+            </div>
+            <!-- <div class="project-actions">
+              <a class="btn btn-sm btn-primary" href="https://github.com/lathiya18197" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">★</span> GitHub
+              </a>
+              <button type="button" class="btn btn-sm btn-ghost video-trigger" data-video-src="https://drive.google.com/file/d/1Ap46LDgDiGeZ6Ax3uMV1J0lkAAM73TsT/view?usp=sharing" data-video-title="Expense Management Web App — demo">
+                <span aria-hidden="true">▶</span> Watch Demo
+              </button>
+            </div> -->
+          </article>
+
+          <!-- ===== Expense Management Web App ===== -->
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-head-text">
+                <span class="project-kicker">Full-stack · Master's project</span>
+                <h3 class="project-title">Expense Management Web App</h3>
+              </div>
+              <span class="project-icon" aria-hidden="true">📊</span>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--problem">Problem</span>
+              <p>
+                Tracking and understanding personal spending is hard without a clear,
+                full-stack tool that turns raw transactions into insight.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--solution">Solution</span>
+              <p>
+                Built a full-stack web app to track and manage expenses as an advanced
+                Master of IT project, alongside Python data-analysis and machine-learning
+                coursework that finds patterns and presents results clearly.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label">Key features</span>
+              <ul class="feature-list">
+                <li>Expense tracking &amp; management</li>
+                <li>Data analysis with Pandas &amp; NumPy</li>
+                <li>ML model building &amp; evaluation</li>
+                <li>Clear data visualisation</li>
+              </ul>
+            </div>
+
+            <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+              <li>Full-stack Web</li><li>Python</li><li>Pandas</li><li>Machine Learning</li>
+            </ul>
+
+            <!-- <div class="project-actions">
+              <a class="btn btn-sm btn-primary" href="https://github.com/lathiya18197" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">★</span> GitHub
+              </a>
+              <button type="button" class="btn btn-sm btn-ghost video-trigger" data-video-src="https://drive.google.com/file/d/18dVgfELPFu-iNlWfBfb1vgxrCHuVIAS-/preview" data-video-title="Expense Management Web App — demo">
+                <span aria-hidden="true">▶</span> Watch Demo
+              </button>
+            </div> -->
+          </article>
+
+          <!-- ===== Ride Booking Management App ===== -->
+        <article class="project-card">
+          <div class="project-head">
+            <div class="project-head-text">
+              <span class="project-kicker">Flutter · Freelance Project</span>
+              <h3 class="project-title">Ride Booking Management App</h3>
+            </div>
+            <span class="project-icon" aria-hidden="true">🚗</span>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label project-label--problem">Problem</span>
+            <p>
+              A client needed a complete ride booking solution — managing drivers,
+              passengers, payments, and schedules — all in one app, with smart
+              reminders so passengers never miss a pickup.
+            </p>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label project-label--solution">Solution</span>
+            <p>
+              Built a full ride booking management app from scratch as a freelance
+              project. Covered the entire product independently — from planning and
+              design through to development and delivery — with Firebase powering
+              real-time data sync across all modules.
+            </p>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label">Key features</span>
+            <ul class="feature-list">
+              <li>Rides module — manage active, upcoming, and completed rides</li>
+              <li>Driver module — profiles, availability, and assigned rides</li>
+              <li>Earnings &amp; payments — driver income and payment history</li>
+              <li>Smart reminders — custom pickup alerts (15 min, 30 min, or custom)</li>
+              <li>Device calendar sync — booked rides added automatically to calendar</li>
+              <li>Push notifications — ride updates, driver arrival, and reminders</li>
+              <li>Reports module — ride activity and performance overview</li>
+            </ul>
+          </div>
+
+          <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+            <li>Flutter</li><li>Dart</li><li>Firebase</li>
+            <li>Push Notifications</li><li>Calendar Sync</li><li>REST</li>
+          </ul>
+
+          <div class="project-actions">
+              <span class="project-tag-live"><span class="status-dot" aria-hidden="true"></span> Private project</span>
+            </div>
+        </article>
+        <!-- ===== Comfortick ===== -->
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-head-text">
+                <span class="project-kicker">Flutter · IoT</span>
+                <h3 class="project-title">Comfortick</h3>
+              </div>
+              <span class="project-icon" aria-hidden="true">📶</span>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--problem">Problem</span>
+              <p>
+                Users wanted to control their air-conditioning units remotely from their
+                phone, without relying on proprietary hardware remotes.
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label project-label--solution">Solution</span>
+              <p>
+                Built an IoT app that scans Wi-Fi networks, connects to AC units over
+                socket communication, and lets users control and schedule them — with
+                presets like "Morning Flow" and "Afternoon Flow".
+              </p>
+            </div>
+
+            <div class="project-block">
+              <span class="project-label">Key features</span>
+              <ul class="feature-list">
+                <li>Wi-Fi scan &amp; device pairing</li>
+                <li>Real-time control over socket communication</li>
+                <li>Scheduling &amp; reusable presets</li>
+                <li>Remote on/off &amp; settings</li>
+              </ul>
+            </div>
+
+            <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+              <li>Flutter</li><li>Dart</li><li>IoT Sockets</li>
+            </ul>
+
+            <div class="project-actions">
+              <span class="project-tag-live"><span class="status-dot" aria-hidden="true"></span> Private · hardware app</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Compact list of additional shipped work -->
+        <div class="project-more">
+          <span class="project-more-label">Also built</span>
+          <ul class="tag-list tag-list-sm">
+            <li>Amity BizNet (B2B · GraphQL)</li>
+            <li>Bluetooth Printer App</li>
+            <li>SMSBrain</li>
+            <li>RajWafers</li>
+            <li>IIA Online Exam</li>
+            <li>MeraCRM</li>
+            <li>Connectly</li>
+            <li>Grocery App</li>
+            <li>Delivery Boy App</li>
+            <li>CallsToDo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Experience ============ -->
+    <section class="section section-alt" id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-index">04</span>
+          <h2 class="section-title" id="experience-heading">Experience</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">2026 — Present</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Freelance Flutter Developer</h3>
+              <p class="timeline-company">Self-employed · Auckland, NZ</p>
+              <p class="timeline-desc">
+                Building cross-platform mobile and web applications for clients while
+                applying AI and data skills from my Master of IT. Available for
+                permanent or contract roles across New Zealand.
+              </p>
+            </div>
+          </li>
+          
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">2023 — 2026</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Senior Flutter Developer</h3>
+              <p class="timeline-company">BillionBright Solutions LLP · Part-time · India </p>
+              <p class="timeline-desc">
+                Led Flutter development across 3+ e-commerce apps, set up a Fastlane
+                CI/CD pipeline, mentored junior developers, and resolved 30+ critical
+                bugs to lift stability and store ratings.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">Feb — Aug 2025</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Flutter Developer Intern</h3>
+              <p class="timeline-company">AffordIT · 18-20 Frost Road, Mount Roskill, Auckland 1041, NZ</p>
+              <p class="timeline-desc">
+                Sole developer building a cross-platform Flutter app from scratch for a
+                local Auckland company. Integrated Firebase auth, real-time data and
+                cloud functions, Spotify SDK and Google Sign-In, and crafted smooth UI
+                animations within an agile team.
+              </p>
+            </div>
+          </li>
+
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">2022 — 2023</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Senior Flutter Developer</h3>
+              <p class="timeline-company">Sav Technologies Pvt Ltd · Dubai</p>
+              <p class="timeline-desc">
+                Owned the front end of the Sav fintech app end to end — first line of
+                code to App Store and Play Store launch. Integrated secure payments and
+                KYC, cut load time ~35%, and led the front-end team.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">2020 — 2022</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Software Engineer</h3>
+              <p class="timeline-company">Insight Timer · Remote (Australia)</p>
+              <p class="timeline-desc">
+                Shipped live events, community, and milestone features for the world's
+                #1 free meditation app (10M+ downloads), working with backend, design,
+                and product teams in a remote agile setup.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">2018 — 2020</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Junior Flutter Developer</h3>
+              <p class="timeline-company">Avinashi Ventures Pvt Ltd · India</p>
+              <p class="timeline-desc">
+                Introduced Flutter to the organisation with its first Flutter project,
+                built native iOS apps in Swift, integrated IoT devices over socket
+                communication, and trained 3 interns.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">Graduated 2026</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Master of Information Technology</h3>
+              <p class="timeline-company">Auckland Institute of Studies · Auckland</p>
+              <p class="timeline-desc">
+                Specialised in Artificial Intelligence, Data Mining, Data Analysis &amp;
+                Visualisation, and Advanced Software Engineering — with full-stack, ML,
+                and data-analysis projects.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Resume ============ -->
+    <section class="section" id="resume" aria-labelledby="resume-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-index">05</span>
+          <h2 class="section-title" id="resume-heading">Resume</h2>
+        </header>
+
+       <div class="resume-grid">
+  <div class="resume-intro">
+    <p class="resume-lead">
+      My full CV — work history, education, and skills in one place.
+    </p>
+
+    <ul class="resume-highlights">
+      <li>
+        <span class="resume-highlight-icon" aria-hidden="true">✦</span>
+        <span><strong>6+ years</strong> Flutter — iOS, Android, and web</span>
+      </li>
+      <li>
+        <span class="resume-highlight-icon" aria-hidden="true">✦</span>
+        <span><strong>Master of IT</strong> — AI &amp; Data Mining, Auckland</span>
+      </li>
+      <li>
+        <span class="resume-highlight-icon" aria-hidden="true">✦</span>
+        <span><strong>Valid NZ work visa</strong> · Auckland-based · available now</span>
+      </li>
+    </ul>
+
+    <div class="resume-actions">
+      <a class="btn btn-primary" href="assets/Viral_Ghori_CV.pdf" download>
+        <span aria-hidden="true">↓</span> Download CV
+      </a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/viral-lathiya-" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">in</span> LinkedIn
+      </a>
+      <a class="btn btn-ghost" href="#contact">
+        <span aria-hidden="true">✉</span> Contact Me
+      </a>
+    </div>
+
+    <p class="resume-meta">PDF · last updated June 2026</p>
+  </div>
+
+  <figure class="resume-preview">
+    <div class="resume-preview-bar" aria-hidden="true">
+      <span class="resume-dot"></span>
+      <span class="resume-dot"></span>
+      <span class="resume-dot"></span>
+      <span class="resume-preview-name">viral-ghori-cv.pdf</span>
+    </div>
+    <div class="resume-preview-doc">
+      <object
+        class="resume-frame"
+        data="assets/Viral_Ghori_CV.pdf"
+        type="application/pdf"
+        aria-label="Resume preview">
+        <div class="resume-fallback">
+          <p>Preview not available on this device.</p>
+          <a class="btn btn-sm btn-primary" href="assets/Viral_Ghori_CV.pdf" target="_blank" rel="noopener noreferrer">
+            Open CV in new tab
+          </a>
+        </div>
+      </object>
+    </div>
+  </figure>
+</div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section section-alt" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-index">06</span>
+          <h2 class="section-title" id="contact-heading">Get in touch</h2>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-intro">
+            <p>
+              Currently freelancing and open to new opportunities across New Zealand
+              — permanent or contract. If you're hiring a Flutter or mobile engineer,
+              or someone with AI and data skills, have a project in mind, or just want
+              to say kia ora, feel free to reach out.
+            </p>
+
+            <ul class="contact-links">
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m3 7 9 6 9-6" />
+                  </svg>
+                </span>
+                <span class="contact-text">
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:viral.lathiya.iosdev@gmail.com">viral.lathiya.iosdev@gmail.com</a>
+                </span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 11.5a16 16 0 0 0 6 6l1-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z" />
+                  </svg>
+                </span>
+                <span class="contact-text">
+                  <span class="contact-label">Phone</span>
+                  <a href="tel:+6422555 0070">+64 22 555 0070</a>
+                </span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+                  </svg>
+                </span>
+                <span class="contact-text">
+                  <span class="contact-label">LinkedIn</span>
+                  <a href="https://linkedin.com/in/viral-lathiya-" target="_blank" rel="noopener noreferrer">/in/viral-lathiya-</a>
+                </span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z" />
+                  </svg>
+                </span>
+                <span class="contact-text">
+                  <span class="contact-label">GitHub</span>
+                  <a href="https://github.com/lathiya18197" target="_blank" rel="noopener noreferrer">@lathiya18197</a>
+                </span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <span class="contact-text">
+                  <span class="contact-label">Location</span>
+                  <span class="contact-static">Auckland, New Zealand</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!--
+            Backend-free form via Formspree:
+            1. Create a free form at https://formspree.io
+            2. Replace `your-form-id` below with your form's id.
+            Until then it falls back to opening the visitor's email client.
+          -->
+          <!-- <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+            novalidate
+          >
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Jane Smith" required />
+              <span class="field-error" data-error-for="name"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="jane@company.co.nz" required />
+              <span class="field-error" data-error-for="email"></span>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Kia ora Viral — we're hiring a Flutter developer for…" required></textarea>
+              <span class="field-error" data-error-for="message"></span>
+            </div>
+
+            <!-- Honeypot: bots fill this, humans never see it. -->
+            <!-- <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-field" />
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <span aria-hidden="true">✉</span> Send message
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>  -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Viral Ghori.</p>
+      <a href="#home" class="footer-top" aria-label="Back to top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============ Video demo modal (shared, lazy-loaded) ============ -->
+  <div class="video-modal" id="videoModal" hidden>
+    <div class="video-modal-overlay" data-close></div>
+    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+      <div class="video-modal-bar">
+        <h2 class="video-modal-title" id="videoModalTitle">Project demo</h2>
+        <button class="video-modal-close" type="button" data-close aria-label="Close video">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <!-- 16:9 responsive frame; iframe is injected here on demand -->
+      <div class="video-modal-frame" id="videoModalFrame"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
