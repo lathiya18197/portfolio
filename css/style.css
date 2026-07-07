@@ -1365,7 +1365,12 @@ body.no-scroll { overflow: hidden; }
     transform: translateY(-120%);
     transition: transform var(--dur) var(--ease);
   }
-  .nav-menu.is-open { transform: translateY(0); }
+  .nav-menu.is-open {
+    transform: translateY(0);
+    background: var(--bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
   .nav-link {
     display: block;
     padding: var(--space-4) var(--space-3);
