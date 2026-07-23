@@ -153,7 +153,7 @@
      Scroll-reveal
      ------------------------------------------------------- */
   const revealTargets = document.querySelectorAll(
-    ".section-head, .about-grid, .skill-card, .project-card, .timeline-item, .resume-grid, .contact-grid"
+    ".section-head, .about-grid, .skill-card, .project-card, .timeline-item, .resume-grid, .contact-grid, .analytics-card"
   );
   revealTargets.forEach((el) => el.classList.add("reveal"));
 
@@ -179,7 +179,7 @@
      so cards don't all pop at once.
      ------------------------------------------------------- */
   document
-    .querySelectorAll(".skills-grid, .projects-grid, .timeline")
+    .querySelectorAll(".skills-grid, .projects-grid, .timeline, .analytics-grid")
     .forEach(function (group) {
       Array.from(group.children).forEach(function (child, i) {
         if (child.classList.contains("reveal")) {
@@ -374,13 +374,10 @@
 
   /* -------------------------------------------------------
      Project video demos — modal lightbox
-     - One shared modal serves every project.
-     - The YouTube iframe is created only when a video is
-       opened (lazy), so no YouTube code loads on first paint.
-     - Closing destroys the iframe, which stops playback and
-       frees memory.
-     - Replace each button's data-video-id="VIDEO_ID" with the
-       real 11-char YouTube id (the part after `watch?v=`).
+     - Resolves src from data-video-src / data-video-id, or
+       from window.PORTFOLIO_VIDEOS[data-video-key]
+     - Converts Google Drive /view URLs to /preview embeds
+     - Creates iframe only when opened (lazy)
      ------------------------------------------------------- */
   const modal = document.getElementById("videoModal");
   const modalFrame = document.getElementById("videoModalFrame");
@@ -388,37 +385,76 @@
   const videoTriggers = document.querySelectorAll(".video-trigger");
   let lastFocused = null;
 
+  function toDrivePreview(url) {
+    if (!url) return "";
+    const m = String(url).match(/\/file\/d\/([^/]+)/);
+    if (m) return "https://drive.google.com/file/d/" + m[1] + "/preview";
+    return url;
+  }
+
+  function resolveVideoOpts(trigger) {
+    const key = trigger.dataset.videoKey;
+    const registry = window.PORTFOLIO_VIDEOS || {};
+    const entry = key && registry[key] ? registry[key] : null;
+
+    let src = trigger.dataset.videoSrc || (entry && entry.src) || "";
+    let id = trigger.dataset.videoId || (entry && (entry.youtube || entry.id)) || "";
+    let title =
+      trigger.dataset.videoTitle || (entry && entry.title) || "Project demo";
+
+    if (id && /youtu\.?be|youtube\.com/.test(id)) {
+      const ym = id.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+      id = ym ? ym[1] : id;
+    }
+    if (src && /drive\.google\.com/.test(src)) src = toDrivePreview(src);
+    if (entry && entry.youtube && !src) id = entry.youtube;
+
+    return { src: src, id: id, title: title, mp4: entry && entry.mp4 };
+  }
+
   function openVideo(opts) {
     if (!modal || !modalFrame) return;
     const id = opts.id;
     const src = opts.src;
     const title = opts.title;
-
-    // Resolve the embed URL: a direct src (YouTube/Vimeo/Google Drive/…)
-    // takes precedence; otherwise build a YouTube embed from the id.
-    let embedSrc = "";
-    if (src && src !== "VIDEO_SRC") {
-      embedSrc = src + (src.indexOf("?") === -1 ? "?autoplay=1" : "&autoplay=1");
-    } else if (id && id !== "VIDEO_ID") {
-      embedSrc =
-        "https://www.youtube-nocookie.com/embed/" +
-        encodeURIComponent(id) +
-        "?autoplay=1&rel=0";
-    } else {
-      // No real video wired up yet — fail gracefully, don't open an empty box.
-      window.alert("Demo video coming soon.");
-      return;
-    }
+    const mp4 = opts.mp4;
 
     modalFrame.innerHTML = "";
-    const iframe = document.createElement("iframe");
-    iframe.src = embedSrc;
-    iframe.title = title || "Project demo video";
-    iframe.loading = "lazy";
-    iframe.allow =
-      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    iframe.allowFullscreen = true;
-    modalFrame.appendChild(iframe);
+
+    if (mp4) {
+      const video = document.createElement("video");
+      video.src = mp4;
+      video.controls = true;
+      video.playsInline = true;
+      video.setAttribute("controlsList", "nodownload");
+      video.style.width = "100%";
+      video.style.height = "100%";
+      video.style.position = "absolute";
+      video.style.inset = "0";
+      video.style.background = "#000";
+      modalFrame.appendChild(video);
+    } else {
+      let embedSrc = "";
+      if (src && src !== "VIDEO_SRC") {
+        embedSrc = src;
+      } else if (id && id !== "VIDEO_ID") {
+        embedSrc =
+          "https://www.youtube-nocookie.com/embed/" +
+          encodeURIComponent(id) +
+          "?rel=0";
+      } else {
+        return;
+      }
+
+      const iframe = document.createElement("iframe");
+      iframe.src = embedSrc;
+      iframe.title = title || "Project demo video";
+      iframe.loading = "lazy";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      modalFrame.appendChild(iframe);
+    }
 
     if (modalTitle && title) modalTitle.textContent = title;
 
@@ -433,25 +469,14 @@
   function closeVideo() {
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    modalFrame.innerHTML = ""; // stops playback + releases the iframe
+    modalFrame.innerHTML = "";
     document.body.classList.remove("no-scroll");
     if (lastFocused && typeof lastFocused.focus === "function") {
       lastFocused.focus();
     }
   }
 
-  videoTriggers.forEach(function (trigger) {
-    trigger.addEventListener("click", function () {
-      openVideo({
-        id: trigger.dataset.videoId,
-        src: trigger.dataset.videoSrc,
-        title: trigger.dataset.videoTitle,
-      });
-    });
-  });
-
   if (modal) {
-    // Close via the X button or by clicking the backdrop.
     modal.querySelectorAll("[data-close]").forEach(function (el) {
       el.addEventListener("click", closeVideo);
     });
@@ -462,10 +487,9 @@
         closeVideo();
         return;
       }
-      // Minimal focus trap: keep Tab within the dialog.
       if (e.key === "Tab") {
         const focusable = modal.querySelectorAll(
-          'button, [href], iframe, [tabindex]:not([tabindex="-1"])'
+          'button, [href], iframe, video, [tabindex]:not([tabindex="-1"])'
         );
         if (!focusable.length) return;
         const first = focusable[0];
@@ -478,6 +502,72 @@
           first.focus();
         }
       }
+    });
+  }
+
+  /* -------------------------------------------------------
+     Case study modal — loads <template id="..."> content
+     ------------------------------------------------------- */
+  const caseModal = document.getElementById("caseModal");
+  const caseBody = document.getElementById("caseModalBody");
+  const caseTitle = document.getElementById("caseModalTitle");
+  let caseLastFocused = null;
+
+  function openCase(templateId) {
+    if (!caseModal || !caseBody || !templateId) return;
+    const tpl = document.getElementById(templateId);
+    if (!tpl || !tpl.content) return;
+
+    caseBody.innerHTML = "";
+    caseBody.appendChild(tpl.content.cloneNode(true));
+
+    if (caseTitle) {
+      const titles = {
+        "case-resume": "AI Resume Analyser",
+        "case-insight": "Insight Timer",
+        "case-agribot": "AgriBot",
+      };
+      caseTitle.textContent = titles[templateId] || "Case study";
+    }
+
+    caseLastFocused = document.activeElement;
+    caseModal.hidden = false;
+    document.body.classList.add("no-scroll");
+    const closeBtn = caseModal.querySelector(".case-modal-close");
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeCase() {
+    if (!caseModal || caseModal.hidden) return;
+    caseModal.hidden = true;
+    if (caseBody) caseBody.innerHTML = "";
+    document.body.classList.remove("no-scroll");
+    if (caseLastFocused && typeof caseLastFocused.focus === "function") {
+      caseLastFocused.focus();
+    }
+  }
+
+  document.querySelectorAll(".case-trigger").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      closeVideo();
+      openCase(btn.dataset.caseId);
+    });
+  });
+
+  videoTriggers.forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+      closeCase();
+      openVideo(resolveVideoOpts(trigger));
+    });
+  });
+
+  if (caseModal) {
+    caseModal.querySelectorAll("[data-case-close]").forEach(function (el) {
+      el.addEventListener("click", closeCase);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (caseModal.hidden) return;
+      if (e.key === "Escape") closeCase();
     });
   }
 

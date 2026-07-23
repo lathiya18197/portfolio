@@ -540,10 +540,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 .hero-title {
-  font-size: clamp(2.3rem, 1.2rem + 5vw, 4rem);
+  font-size: clamp(1.65rem, 1rem + 2.8vw, 2.55rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: var(--space-5);
+  max-width: 28ch;
 }
 .gradient-text {
   background: var(--gradient-brand);
@@ -886,6 +887,187 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-faint);
+}
+
+/* Featured project + case study + analytics */
+.project-card--featured {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border-strong));
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      color-mix(in srgb, var(--accent-2) 6%, transparent)),
+    var(--surface);
+  box-shadow: 0 20px 50px -28px var(--glow-1);
+}
+.project-badge {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-contrast);
+  background: var(--gradient-brand);
+  border-radius: 999px;
+}
+.project-summary {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.hero-name {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-location {
+  margin: var(--space-5) 0 0;
+  font-size: 0.92rem;
+  color: var(--text-faint);
+}
+
+.analytics-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+.analytics-card {
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+}
+.analytics-card-title {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-2);
+}
+.analytics-card-kicker {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-2);
+}
+.analytics-card .project-block { margin-bottom: var(--space-4); }
+.analytics-card .project-block:last-child { margin-bottom: 0; }
+
+.section-note {
+  margin-top: calc(-1 * var(--space-3));
+  margin-bottom: var(--space-6);
+  max-width: 44rem;
+  color: var(--text-muted);
+}
+
+.timeline-bullets {
+  margin: var(--space-3) 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: var(--space-2);
+  color: var(--text-muted);
+}
+.timeline-bullets li { padding-left: var(--space-1); }
+
+.contact-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: var(--space-5) 0 var(--space-6);
+}
+
+.case-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+}
+.case-modal[hidden] { display: none; }
+.case-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 5, 12, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: modal-fade 0.25s var(--ease) both;
+}
+.case-modal-dialog {
+  position: relative;
+  width: min(42rem, 100%);
+  max-height: min(85dvh, 52rem);
+  overflow: auto;
+  background: var(--surface-solid);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  animation: modal-pop 0.32s var(--ease-spring) both;
+}
+.case-modal-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-5);
+  background: var(--surface-solid);
+  border-bottom: 1px solid var(--border);
+}
+.case-modal-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.case-modal-close {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+}
+.case-modal-close:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.case-modal-body {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+}
+.case-study {
+  display: grid;
+  gap: var(--space-5);
+}
+.case-study h3 {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: var(--space-2);
+}
+.case-study p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (min-width: 48rem) {
+  .analytics-grid { grid-template-columns: 1fr 1fr; }
+  .analytics-grid .analytics-card:first-child { grid-column: 1 / -1; }
 }
 
 /* ----- Video demo modal (lightbox) ----- */
